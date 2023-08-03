@@ -33,24 +33,20 @@ export default function BaggageStorage() {
         }
     }
 
-
     function sendCommand(type, value='') {
         const event = {type: type, value: value};
 
         ws.send(JSON.stringify(event));
     }
 
-
     function openTheDoor() {
         sendCommand('provide_password', password);
         setPassword('');
     }
 
-
     function closeTheDoor() {
         sendCommand('close');
     }
-
 
     function CloseButton() {
         return (
@@ -59,7 +55,6 @@ export default function BaggageStorage() {
             </button>
         );
     }
-
 
     function enterPasswordState() {
         return (
@@ -77,7 +72,6 @@ export default function BaggageStorage() {
         );
     }
     
-    
     function wrongPasswordState() {
         return (
             <div>
@@ -85,7 +79,6 @@ export default function BaggageStorage() {
             </div>
         );
     }
-    
     
     function doorOpenedState() {
         return (
@@ -96,7 +89,6 @@ export default function BaggageStorage() {
         );
     }
     
-    
     function closeTheDoorState() {
         return (
             <div>
@@ -106,7 +98,6 @@ export default function BaggageStorage() {
         );
     }
     
-    
     function errorState() {
         return (
             <div>
@@ -114,7 +105,6 @@ export default function BaggageStorage() {
             </div>
         );
     }
-    
     
     switch (state) {
         case 'enter password':
