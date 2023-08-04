@@ -18,10 +18,6 @@ export default function BaggageStorage() {
     const [state, setState] = useState('enter password');
     const [password, setPassword] = useState('');
 
-    function handleNextClick() {
-        (state == 'wrong password') ? setState('enter password') : setState('wrong password');
-    }
-
     if (typeof window !== 'undefined') {
         ws.onmessage = function (evt) { 
             console.log(evt.data);
